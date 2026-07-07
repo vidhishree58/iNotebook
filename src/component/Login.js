@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { useNavigate, useOutletContext } from "react-router-dom";
 
 const Login = () => {
+  console.log(process.env.REACT_APP_HOST)
   // Store email & password entered by user
   const [credentials, setCredentials] = useState({
     email: "",
@@ -22,7 +23,7 @@ const Login = () => {
     e.preventDefault();
 
     // Send login request to backend
-    const response = await fetch(`${process.env.HOST}/api/auth/login`, {
+    const response = await fetch(`${process.env.REACT_APP_HOST}/api/auth/login`, {
       // POST = send data
       method: "POST",
 

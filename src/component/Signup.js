@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { useNavigate, useOutletContext } from "react-router-dom";
 
 const Signup = () => {
-
+  console.log(process.env.HOST)
   // Store form data
   const [credentials, setCredentials] = useState({
     name: "",
@@ -23,9 +23,9 @@ const Signup = () => {
 
     // Prevent page refresh
     e.preventDefault();
-
+    
     // Send user details to backend
-    const response = await fetch(`${process.env.HOST}/api/auth`, {
+    const response = await fetch(`${process.env.REACT_APP_HOST}/api/auth`, {
 
       // POST = Create new user
       method: "POST",

@@ -10,7 +10,6 @@ const NoteState = (props) => {
   const { showAlert } = props;
 
   // Backend Server Address
-  const host = process.env.HOST
 
   // Store all notes
   const [notes, setNotes] = useState([]);
@@ -18,7 +17,7 @@ const NoteState = (props) => {
   // Get All Notes
   const getNotes = async () => {
     // Backend API ko request bhejo
-    const response = await fetch(`${host}/api/notes/fetchallnotes`, {
+    const response = await fetch(`${process.env.REACT_APP_HOST}/api/notes/fetchallnotes`, {
       // GET = data lena
       method: "GET",
 
@@ -41,7 +40,7 @@ const NoteState = (props) => {
   // Add Note
   const addNote = async (title, description, tag) => {
     // Backend API ko request bhejo
-    const response = await fetch(`${host}/api/notes/addnote`, {
+    const response = await fetch(`${process.env.REACT_APP_HOST}/api/notes/addnote`, {
       // POST = Naya Data Bhejna
       method: "POST",
 
@@ -74,7 +73,7 @@ const NoteState = (props) => {
   // Delete Note
   const deleteNote = async (id) => {
     // Send DELETE request to backend
-    await fetch(`${host}/api/notes/deletenote/${id}`, {
+    await fetch(`${process.env.REACT_APP_HOST}/api/notes/deletenote/${id}`, {
       // DELETE = Remove Data
       method: "DELETE",
 
@@ -98,7 +97,7 @@ const NoteState = (props) => {
 
   // Edit Note
   const editNote = async (id, title, description, tag) => {
-    await fetch(`${host}/api/notes/updatenote/${id}`, {
+    await fetch(`${process.env.REACT_APP_HOST}/api/notes/updatenote/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
