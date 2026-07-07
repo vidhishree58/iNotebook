@@ -1,6 +1,7 @@
 // Import Mongoose package (Bridge between Node.js and MongoDB)
 const mongoose = require('mongoose');
-
+const dns = require("dns");
+dns.setServers(["8.8.8.8", "8.8.4.4"]);
 // MongoDB connection URL
 const mongoURI = process.env.MONGO_URI;
 
