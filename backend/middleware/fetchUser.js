@@ -7,13 +7,8 @@ const JWT_SECRET = process.env.JWT_SECRET;
 // Custom middleware
 const fetchuser = (req, res, next) => {
 
-    // Print all incoming headers (for debugging)
-    console.log("Headers:", req.headers);
-
     // Get token from request header
     const token = req.header("auth-token");
-
-    console.log("Token:", token);
 
     // If token is missing, stop request
     if (!token) {
