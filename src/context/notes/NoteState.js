@@ -10,7 +10,7 @@ const NoteState = (props) => {
   const { showAlert } = props;
 
   // Backend Server Address
-  const host = "http://localhost:5000";
+  const host = process.env.HOST
 
   // Store all notes
   const [notes, setNotes] = useState([]);

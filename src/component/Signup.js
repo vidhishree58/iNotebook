@@ -25,7 +25,7 @@ const Signup = () => {
     e.preventDefault();
 
     // Send user details to backend
-    const response = await fetch("http://localhost:5000/api/auth", {
+    const response = await fetch(`${process.env.HOST}/api/auth`, {
 
       // POST = Create new user
       method: "POST",
