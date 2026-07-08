@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import { useNavigate, useOutletContext } from "react-router-dom";
 
 const Login = () => {
-  console.log(process.env.REACT_APP_HOST)
   // Store email & password entered by user
   const [credentials, setCredentials] = useState({
     email: "",
